@@ -63,7 +63,7 @@
 		2C85627D1AFAB65F00F0B24B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		2C85627E1AFAB65F00F0B24B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C85627F1AFAB65F00F0B24B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		5F5A534C1ADE670C00F81DF0 /* FriendlyPix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendlyPix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5A534C1ADE670C00F81DF0 /* rvnt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rvnt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5A53501ADE670C00F81DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5A53511ADE670C00F81DF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F5A53531ADE670C00F81DF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2C85627A1AFAB65F00F0B24B /* shared */,
-				5F5A534E1ADE670C00F81DF0 /* FriendlyPix */,
+				5F5A534E1ADE670C00F81DF0 /* rvnt */,
 				5F5A534D1ADE670C00F81DF0 /* Products */,
 				AD1F1C80A93A096F652504F5 /* Frameworks */,
 			);
@@ -148,12 +148,12 @@
 		5F5A534D1ADE670C00F81DF0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F5A534C1ADE670C00F81DF0 /* FriendlyPix.app */,
+				5F5A534C1ADE670C00F81DF0 /* rvnt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5F5A534E1ADE670C00F81DF0 /* FriendlyPix */ = {
+		5F5A534E1ADE670C00F81DF0 /* rvnt */ = {
 			isa = PBXGroup;
 			children = (
 				104DECED1C344BDC0044430F /* Controllers */,
@@ -164,7 +164,7 @@
 				1061E58F1C24B50500B3BD42 /* FPAppState.h */,
 				1061E58D1C24B4EC00B3BD42 /* FPAppState.m */,
 			);
-			path = FriendlyPix;
+			path = rvnt;
 			sourceTree = "<group>";
 		};
 		5F5A534F1ADE670C00F81DF0 /* Supporting Files */ = {
@@ -191,9 +191,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F5A534B1ADE670C00F81DF0 /* FriendlyPix */ = {
+		5F5A534B1ADE670C00F81DF0 /* rvnt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F5A536F1ADE670C00F81DF0 /* Build configuration list for PBXNativeTarget "FriendlyPix" */;
+			buildConfigurationList = 5F5A536F1ADE670C00F81DF0 /* Build configuration list for PBXNativeTarget "rvnt" */;
 			buildPhases = (
 				5F5A53481ADE670C00F81DF0 /* Sources */,
 				5F5A53491ADE670C00F81DF0 /* Frameworks */,
@@ -203,9 +203,9 @@
 			);
 			dependencies = (
 			);
-			name = FriendlyPix;
+			name = rvnt;
 			productName = FriendlyPing;
-			productReference = 5F5A534C1ADE670C00F81DF0 /* FriendlyPix.app */;
+			productReference = 5F5A534C1ADE670C00F81DF0 /* rvnt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F5A53471ADE670C00F81DF0 /* Build configuration list for PBXProject "FriendlyPix" */;
+			buildConfigurationList = 5F5A53471ADE670C00F81DF0 /* Build configuration list for PBXProject "rvnt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -237,7 +237,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F5A534B1ADE670C00F81DF0 /* FriendlyPix */,
+				5F5A534B1ADE670C00F81DF0 /* rvnt */,
 			);
 		};
 /* End PBXProject section */
@@ -389,11 +389,11 @@
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "$(SRCROOT)/FriendlyPix/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/rvnt/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.experimental0.dev;
-				PRODUCT_NAME = FriendlyPix;
+				PRODUCT_NAME = rvnt;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -410,11 +410,11 @@
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "$(SRCROOT)/FriendlyPix/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/rvnt/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.experimental0.dev;
-				PRODUCT_NAME = FriendlyPix;
+				PRODUCT_NAME = rvnt;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -422,7 +422,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F5A53471ADE670C00F81DF0 /* Build configuration list for PBXProject "FriendlyPix" */ = {
+		5F5A53471ADE670C00F81DF0 /* Build configuration list for PBXProject "rvnt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F5A536D1ADE670C00F81DF0 /* Debug */,
@@ -431,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F5A536F1ADE670C00F81DF0 /* Build configuration list for PBXNativeTarget "FriendlyPix" */ = {
+		5F5A536F1ADE670C00F81DF0 /* Build configuration list for PBXNativeTarget "rvnt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F5A53701ADE670C00F81DF0 /* Debug */,

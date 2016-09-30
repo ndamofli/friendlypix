@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.firebase.samples.apps.friendlypix;
+package com.google.firebase.samples.apps.rvnt;
 
 import android.content.Context;
 import android.content.Intent;

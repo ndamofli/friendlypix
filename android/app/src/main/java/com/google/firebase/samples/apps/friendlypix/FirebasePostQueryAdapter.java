@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.firebase.samples.apps.friendlypix;
+package com.google.firebase.samples.apps.rvnt;
 
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -29,7 +29,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.samples.apps.friendlypix.Models.Post;
+import com.google.firebase.samples.apps.rvnt.Models.Post;
 
 import java.util.ArrayList;
 import java.util.List;

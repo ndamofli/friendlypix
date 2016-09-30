@@ -15,12 +15,12 @@
  */
 'use strict';
 
-window.friendlyPix = window.friendlyPix || {};
+window.rvnt = window.rvnt || {};
 
 /**
  * Set of utilities to handle Material Design Lite elements.
  */
-friendlyPix.MaterialUtils = class {
+rvnt.MaterialUtils = class {
 
   /**
    * Refreshes the UI state of the given Material Design Checkbox / Switch element.

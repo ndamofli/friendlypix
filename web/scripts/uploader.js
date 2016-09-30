@@ -15,12 +15,12 @@
  */
 'use strict';
 
-window.friendlyPix = window.friendlyPix || {};
+window.rvnt = window.rvnt || {};
 
 /**
  * Handles uploads of new pics.
  */
-friendlyPix.Uploader = class {
+rvnt.Uploader = class {
 
   /**
    * @return {number}
@@ -186,14 +186,14 @@ friendlyPix.Uploader = class {
       image.src = url;
 
       // Generate thumb.
-      const maxThumbDimension = friendlyPix.Uploader.THUMB_IMAGE_SPECS.maxDimension;
-      const thumbCanvas = friendlyPix.Uploader._getScaledCanvas(image, maxThumbDimension);
-      thumbCanvas.toBlob(resolveThumbBlob, 'image/jpeg', friendlyPix.Uploader.THUMB_IMAGE_SPECS.quality);
+      const maxThumbDimension = rvnt.Uploader.THUMB_IMAGE_SPECS.maxDimension;
+      const thumbCanvas = rvnt.Uploader._getScaledCanvas(image, maxThumbDimension);
+      thumbCanvas.toBlob(resolveThumbBlob, 'image/jpeg', rvnt.Uploader.THUMB_IMAGE_SPECS.quality);
 
       // Generate full sized image.
-      const maxFullDimension = friendlyPix.Uploader.FULL_IMAGE_SPECS.maxDimension;
-      const fullCanvas = friendlyPix.Uploader._getScaledCanvas(image, maxFullDimension);
-      fullCanvas.toBlob(resolveFullBlob, 'image/jpeg', friendlyPix.Uploader.FULL_IMAGE_SPECS.quality);
+      const maxFullDimension = rvnt.Uploader.FULL_IMAGE_SPECS.maxDimension;
+      const fullCanvas = rvnt.Uploader._getScaledCanvas(image, maxFullDimension);
+      fullCanvas.toBlob(resolveFullBlob, 'image/jpeg', rvnt.Uploader.FULL_IMAGE_SPECS.quality);
     };
 
     const reader = new FileReader();
@@ -212,13 +212,13 @@ friendlyPix.Uploader = class {
    * Uploads the pic to Firebase Storage and add a new post into the Firebase Database.
    */
   uploadPic(e) {
-    e.preventDefault();
+    e.prvntDefault();
     this.disableUploadUi(true);
     var imageCaption = this.imageCaptionInput.val();
 
     this.generateImages().then(pics => {
       // Upload the File upload to Firebase Storage and create new post.
-      friendlyPix.firebase.uploadNewPic(pics.full, pics.thumb, this.currentFile.name, imageCaption)
+      rvnt.firebase.uploadNewPic(pics.full, pics.thumb, this.currentFile.name, imageCaption)
           .then(postId => {
             page(`/user/${this.auth.currentUser.uid}`);
             var data = {
@@ -248,17 +248,17 @@ friendlyPix.Uploader = class {
     this.currentFile = null;
 
     // Cancel all Firebase listeners.
-    friendlyPix.firebase.cancelAllSubscriptions();
+    rvnt.firebase.cancelAllSubscriptions();
 
     // Clear previously displayed pic.
     this.newPictureContainer.attr('src', '');
 
     // Clear the text field.
-    friendlyPix.MaterialUtils.clearTextField(this.imageCaptionInput[0]);
+    rvnt.MaterialUtils.clearTextField(this.imageCaptionInput[0]);
 
     // Make sure UI is not disabled.
     this.disableUploadUi(false);
   }
 };
 
-friendlyPix.uploader = new friendlyPix.Uploader();
+rvnt.uploader = new rvnt.Uploader();

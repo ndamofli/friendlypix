@@ -39,7 +39,7 @@ You can request a new feature by submitting an issue to our [GitHub Repository][
 If you would like to implement a new feature then consider what kind of change it is:
 
 * **Major Changes** that you wish to contribute to the project should be discussed first on our
-[issue tracker][github] so that we can better coordinate our efforts, prevent
+[issue tracker][github] so that we can better coordinate our efforts, prvnt
 duplication of work, and help you to craft the change so that it is successfully accepted into the
 project.
 * **Small Changes** can be crafted and submitted to the [GitHub Repository][github] as a Pull Request directly.
@@ -89,7 +89,7 @@ Please provide any other information below, and attach a screenshot if possible.
 ### Submitting a Pull Request
 Before you submit your pull request consider the following guidelines:
 
-* Search [GitHub](https://github.com/firebase/friendlypix/pulls) for an open or closed Pull Request
+* Search [GitHub](https://github.com/firebase/rvnt/pulls) for an open or closed Pull Request
   that relates to your submission. You don't want to duplicate effort.
 * Please sign our [Contributor License Agreement (CLA)](#cla) before sending pull
   requests. We cannot accept code without this.
@@ -122,7 +122,7 @@ Before you submit your pull request consider the following guidelines:
     git push origin my-fix-branch
     ```
 
-* In GitHub, send a pull request to `friendlypix:master`.
+* In GitHub, send a pull request to `rvnt:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run the Friendly Pix test suite to ensure tests are still passing.
@@ -175,7 +175,7 @@ changes to be accepted, the CLA must be signed. It's a quick process, we promise
 
 *This guide was inspired by the [AngularJS contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).*
 
-[github]: https://github.com/firebase/friendlypix
+[github]: https://github.com/firebase/rvnt
 [google-cla]: https://cla.developers.google.com
 [js-style-guide]: http://google.github.io/styleguide/javascriptguide.xml
 [jsbin]: http://jsbin.com/

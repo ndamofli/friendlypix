@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.firebase.samples.apps.friendlypix.Models;
+package com.google.firebase.samples.apps.rvnt.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.firebase.samples.apps.friendlypix;
+package com.google.firebase.samples.apps.rvnt;
 
 import android.content.Context;
 import android.content.Intent;
@@ -43,8 +43,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ServerValue;
-import com.google.firebase.samples.apps.friendlypix.Models.Author;
-import com.google.firebase.samples.apps.friendlypix.Models.Comment;
+import com.google.firebase.samples.apps.rvnt.Models.Author;
+import com.google.firebase.samples.apps.rvnt.Models.Comment;
 
 
 /**

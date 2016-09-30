@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="-712" y="-18"/>
         </scene>
-        <!--FriendlyPix-->
+        <!--rvnt-->
         <scene sceneID="XlJ-78-8vH">
             <objects>
                 <tableViewController id="gHT-gQ-3v1" customClass="FPHomeViewController" sceneMemberID="viewController">
@@ -93,8 +93,8 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="FriendlyPix" id="S4u-aP-nZh">
-                        <barButtonItem key="backBarButtonItem" title="FriendlyPix" id="JcQ-Tw-eBS"/>
+                    <navigationItem key="navigationItem" title="rvnt" id="S4u-aP-nZh">
+                        <barButtonItem key="backBarButtonItem" title="rvnt" id="JcQ-Tw-eBS"/>
                         <barButtonItem key="leftBarButtonItem" title="Invite" id="OlG-7o-nVg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>

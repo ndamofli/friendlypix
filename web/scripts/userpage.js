@@ -15,12 +15,12 @@
  */
 'use strict';
 
-window.friendlyPix = window.friendlyPix || {};
+window.rvnt = window.rvnt || {};
 
 /**
  * Handles the User Profile UI.
  */
-friendlyPix.UserPage = class {
+rvnt.UserPage = class {
 
   /**
    * Initializes the user's profile UI.
@@ -69,7 +69,7 @@ friendlyPix.UserPage = class {
     const checked = this.followCheckbox.prop('checked');
     this.followCheckbox.prop('disabled', true);
 
-    return friendlyPix.firebase.toggleFollowUser(this.userId, checked);
+    return rvnt.firebase.toggleFollowUser(this.userId, checked);
   }
 
   /**
@@ -77,11 +77,11 @@ friendlyPix.UserPage = class {
    */
   trackFollowStatus() {
     if (this.auth.currentUser) {
-      friendlyPix.firebase.registerToFollowStatusUpdate(this.userId, data => {
+      rvnt.firebase.registerToFollowStatusUpdate(this.userId, data => {
         this.followCheckbox.prop('checked', data.val() !== null);
         this.followCheckbox.prop('disabled', false);
         this.followLabel.text(data.val() ? 'Following' : 'Follow');
-        friendlyPix.MaterialUtils.refreshSwitchState(this.followContainer);
+        rvnt.MaterialUtils.refreshSwitchState(this.followContainer);
       });
     }
   }
@@ -93,7 +93,7 @@ friendlyPix.UserPage = class {
     const postIds = Object.keys(posts);
     for (let i = postIds.length - 1; i >= 0; i--) {
       this.userInfoPageImageContainer.append(
-          friendlyPix.UserPage.createImageCard(postIds[i],
+          rvnt.UserPage.createImageCard(postIds[i],
               posts[postIds[i]].thumb_url || posts[postIds[i]].url, posts[postIds[i]].text));
       this.noPosts.hide();
     }
@@ -135,13 +135,13 @@ friendlyPix.UserPage = class {
     } else {
       this.followContainer.show();
       this.followCheckbox.prop('disabled', true);
-      friendlyPix.MaterialUtils.refreshSwitchState(this.followContainer);
+      rvnt.MaterialUtils.refreshSwitchState(this.followContainer);
       // Start live tracking the state of the "Follow" Checkbox.
       this.trackFollowStatus();
     }
 
     // Load user's profile.
-    friendlyPix.firebase.loadUserProfile(userId).then(snapshot => {
+    rvnt.firebase.loadUserProfile(userId).then(snapshot => {
       const userInfo = snapshot.val();
       if (userInfo) {
         this.userAvatar.css('background-image',
@@ -159,27 +159,27 @@ friendlyPix.UserPage = class {
     });
 
     // Lod user's number of followers.
-    friendlyPix.firebase.registerForFollowersCount(userId,
+    rvnt.firebase.registerForFollowersCount(userId,
         nbFollowers => this.nbFollowers.text(nbFollowers));
 
     // Lod user's number of followed users.
-    friendlyPix.firebase.registerForFollowingCount(userId,
+    rvnt.firebase.registerForFollowingCount(userId,
         nbFollowed => this.nbFollowing.text(nbFollowed));
 
     // Lod user's number of posts.
-    friendlyPix.firebase.registerForPostsCount(userId,
+    rvnt.firebase.registerForPostsCount(userId,
         nbPosts => this.nbPostsContainer.text(nbPosts));
 
     // Display user's posts.
-    friendlyPix.firebase.getUserFeedPosts(userId).then(data => {
+    rvnt.firebase.getUserFeedPosts(userId).then(data => {
       const postIds = Object.keys(data.entries);
       if (postIds.length === 0) {
         this.noPosts.show();
       }
-      friendlyPix.firebase.subscribeToUserFeed(userId,
+      rvnt.firebase.subscribeToUserFeed(userId,
         (postId, postValue) => {
           this.userInfoPageImageContainer.prepend(
-              friendlyPix.UserPage.createImageCard(postId,
+              rvnt.UserPage.createImageCard(postId,
                   postValue.thumb_url || postValue.url, postValue.text));
           this.noPosts.hide();
         }, postIds[postIds.length - 1]);
@@ -190,7 +190,7 @@ friendlyPix.UserPage = class {
     });
 
     // Listen for posts deletions.
-    friendlyPix.firebase.registerForPostsDeletion(postId =>
+    rvnt.firebase.registerForPostsDeletion(postId =>
         $(`.fp-post-${postId}`, this.userPage).remove());
   }
 
@@ -198,12 +198,12 @@ friendlyPix.UserPage = class {
    * Displays the list of followed people.
    */
   displayFollowing() {
-    friendlyPix.firebase.getFollowingProfiles(this.userId).then(profiles => {
+    rvnt.firebase.getFollowingProfiles(this.userId).then(profiles => {
       // Clear previous following list.
       $('.fp-usernamelink', this.followingContainer).remove();
       // Display all following profile cards.
       Object.keys(profiles).forEach(uid => this.followingContainer.prepend(
-          friendlyPix.UserPage.createProfileCardHtml(
+          rvnt.UserPage.createProfileCardHtml(
               uid, profiles[uid].profile_picture, profiles[uid].full_name)));
       if (Object.keys(profiles).length > 0) {
         this.followingContainer.show();
@@ -224,7 +224,7 @@ friendlyPix.UserPage = class {
     $('.is-active', this.userInfoPageImageContainer).removeClass('is-active');
 
     // Cancel all Firebase listeners.
-    friendlyPix.firebase.cancelAllSubscriptions();
+    rvnt.firebase.cancelAllSubscriptions();
 
     // Hides the "Load Next Page" button.
     this.nextPageButton.hide();
@@ -237,7 +237,7 @@ friendlyPix.UserPage = class {
     $('.fp-usernamelink', this.followingContainer).remove();
 
     // Stops then infinite scrolling listeners.
-    friendlyPix.MaterialUtils.stopOnEndScrolls();
+    rvnt.MaterialUtils.stopOnEndScrolls();
 
     // Hide the "No posts" message.
     this.noPosts.hide();
@@ -261,9 +261,9 @@ friendlyPix.UserPage = class {
     // Display the thumbnail.
     $('.mdl-card', element).css('background-image', `url("${thumbUrl.replace(/"/g, '\\"')}")`);
     // Start listening for comments and likes counts.
-    friendlyPix.firebase.registerForLikesCount(postId,
+    rvnt.firebase.registerForLikesCount(postId,
         nbLikes => $('.likes', element).text(nbLikes));
-    friendlyPix.firebase.registerForCommentsCount(postId,
+    rvnt.firebase.registerForCommentsCount(postId,
         nbComments => $('.comments', element).text(nbComments));
 
     return element;
@@ -281,4 +281,4 @@ friendlyPix.UserPage = class {
   }
 };
 
-friendlyPix.userPage = new friendlyPix.UserPage();
+rvnt.userPage = new rvnt.UserPage();

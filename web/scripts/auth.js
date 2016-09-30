@@ -15,12 +15,12 @@
  */
 'use strict';
 
-window.friendlyPix = window.friendlyPix || {};
+window.rvnt = window.rvnt || {};
 
 /**
  * Handles the user auth flows and updating the UI depending on the auth state.
  */
-friendlyPix.Auth = class {
+rvnt.Auth = class {
 
   /**
    * Returns a Promise that completes when auth is ready.
@@ -69,8 +69,8 @@ friendlyPix.Auth = class {
       return;
     }
 
-    if (window.friendlyPix.router) {
-      window.friendlyPix.router.reloadPage();
+    if (window.rvnt.router) {
+      window.rvnt.router.reloadPage();
     }
     this._waitForAuthPromiseResolver.resolve();
     $(document).ready(() => {
@@ -88,10 +88,10 @@ friendlyPix.Auth = class {
             `url("${user.photoURL || '/images/silhouette.jpg'}")`);
         this.signedInUsername.text(user.displayName || 'Anonymous');
         this.usernameLink.attr('href', `/user/${user.uid}`);
-        friendlyPix.firebase.saveUserData(user.photoURL, user.displayName);
+        rvnt.firebase.saveUserData(user.photoURL, user.displayName);
       }
     });
   }
 };
 
-friendlyPix.auth = new friendlyPix.Auth();
+rvnt.auth = new rvnt.Auth();

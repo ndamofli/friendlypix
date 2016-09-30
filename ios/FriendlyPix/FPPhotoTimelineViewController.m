@@ -66,7 +66,7 @@
 }
 
 - (void)dealloc {
-  // To prevent crash when popping this from navigation controller
+  // To prvnt crash when popping this from navigation controller
   self.tableView.delegate = nil;
   self.tableView.dataSource = nil;
 }

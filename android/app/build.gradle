@@ -21,7 +21,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.google.firebase.samples.apps.friendlypix"
+        applicationId "com.google.firebase.samples.apps.rvnt"
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 3
@@ -30,9 +30,9 @@ android {
     signingConfigs {
         release {
             storeFile file("release.jks")
-            storePassword "friendlypix"
-            keyAlias "friendlypix"
-            keyPassword "friendlypix"
+            storePassword "rvnt"
+            keyAlias "rvnt"
+            keyPassword "rvnt"
         }
     }
     buildTypes {
@@ -46,10 +46,10 @@ android {
         dev {
         }
         prod {
-            applicationId "pub.devrel.friendlypix"
+            applicationId "pub.devrel.rvnt"
         }
         dev2 {
-            applicationId "com.google.firebase.samples.apps.friendlypixtest"
+            applicationId "com.google.firebase.samples.apps.rvnttest"
         }
     }
     packagingOptions {
