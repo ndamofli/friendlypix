@@ -1,6 +1,6 @@
 {
   "name": "rvnt",
-  "description": "Share your pics with rvnt. Powered by Firebase.",
+  "description": "Share your pics with FriendlyPix. Powered by Firebase.",
   "version": "1.0.0",
   "authors": [
     "Nicolas Garnier <nivco@google.com> (https://firebase.google.com/)"

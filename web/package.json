@@ -4,6 +4,7 @@
 "build-win": "babel scripts -s --minified --compact true -d lib",
 "serve": "firebase serve & babel -w scripts -s --retain-lines -d lib",
 "serve-win":"firebase serve && babel -w scripts -s --retain-lines -d lib",
+"log":"firebase login",
 "dep":"firebase deploy --project  revent-19913"
 
 },
