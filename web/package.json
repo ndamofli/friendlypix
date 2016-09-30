@@ -3,7 +3,9 @@
 "build": "babel scripts -s --minified --compact true -d lib; bower install; echo 'Done. Ready to deploy.'",
 "build-win": "babel scripts -s --minified --compact true -d lib",
 "serve": "firebase serve & babel -w scripts -s --retain-lines -d lib",
-"serve-win":"firebase serve && babel -w scripts -s --retain-lines -d lib"
+"serve-win":"firebase serve && babel -w scripts -s --retain-lines -d lib",
+"dep":"firebase deploy --project  revent-19913"
+
 },
   "devDependencies": {
     "babel-cli": "^6.8.0",
